@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="thiết kế website, bán source code, share source code, Trần Việt Anh, lập trình web">
+  <meta name="author" content="Trần Việt Anh">
+  <title>Trần Việt Anh - Thiết kế Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;800&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- theme body -->
+     <div class="box">
+    <div class="div-theme">
+        <div class="div"><img src="body1.png" alt="theme body anh so 1" title="theme body anh so 1" onclick="tb1()"></div>
+        <div class="div"><img src="body2.png" alt="theme body anh so 2" title="theme body anh so 2"  onclick="tb2()"></div>
+     </div>
+     <script>
+        function tb1(){
+            document.body.classList.add("theme-girl1");
+            document.body.classList.remove("theme-girl2");
+        }
+        function tb2(){
+            document.body.classList.add("theme-girl2");
+            document.body.classList.remove("theme-girl1");
+        }
+     </script>
+     </div>
+     <!-- x icon -->
+      <div class="x-icon">
+        <i class="fa-solid fa-xmark" id="xmark"></i>
+      </div>
+       <!-- su ly phan tram -->
+      <div id="item">
+        dang su ly: <span style="color: crimson;" id="box">0%</span>
+      </div>
+     <!-- of body theme -->
+  <div class="container">
+    <div class="avatar-frame">
+      <img src="https://tranvietanh.netlify.app/avatar.jpg" alt="Ảnh đại diện của Trần Việt Anh" class="avatar">
+      <img src="https://tranvietanh.netlify.app/frame.png" alt="Khung viền ảnh đại diện" class="avatar-border">
+    </div>
+    
+    <div class="name">
+        Coder Manh Cuong IT
+      <img src="https://tranvietanh.netlify.app/verified.png" alt="Huy hiệu xác minh" class="verified-badge">
+    </div>
+
+    <div class="info">
+      Thiết kế website theo yêu cầu<br>
+      Bán và share source code<br>
+      Cần source code? Inbox Zalo mình<br>
+      <button class="button" onclick="location.href='https://zalo.me/#'">
+        <i>Zalo: ...</i>
+      </button>
+    </div>
+
+    <div class="button-container">
+      <button class="button" onclick="location.href='https://t.me/#'">
+        <i class="fab fa-telegram"></i> Telegram
+      </button>
+      <button class="button" onclick="location.href='#'">
+        <i class="fab fa-facebook"></i> Facebook
+      </button>
+      <button class="button" onclick="location.href='#'">
+        <i class="fab fa-tiktok"></i> TikTok
+      </button>
+      <button class="button" onclick="location.href='#'">
+        <i class="fab fa-github"></i> GitHub
+      </button>
+      <button class="button" onclick="theme()">
+        <img width="20" height="20" src="https://tranvietanh.netlify.app/frame.png"></i> Theme Body
+      </button>
+    </div>
+  </div>
+
+  <button class="music-btn" id="music-btn">
+    <i class="fas fa-play"></i>
+  </button>
+
+  <audio id="background-music" loop="">
+    <source src="music.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát âm thanh.
+  </audio>
+
+  <script>
+    const musicBtn = document.getElementById('music-btn');
+    const music = document.getElementById('background-music');
+    const musicIcon = musicBtn.querySelector('i');
+
+    musicBtn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play().catch(error => {
+          console.error('Lỗi phát nhạc:', error);
+        });
+        musicIcon.classList.replace('fa-play', 'fa-pause');
+      } else {
+        music.pause();
+        musicIcon.classList.replace('fa-pause', 'fa-play');
+      }
+    });
+  </script>
+
+</body>
+</html>
